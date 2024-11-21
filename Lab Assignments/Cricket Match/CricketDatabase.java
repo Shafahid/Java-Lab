@@ -1,5 +1,5 @@
 
-
+import java.util.Scanner;
 class Players {
     String name;
     String quality;
@@ -51,8 +51,14 @@ class features {
     }
 
     void newplayer(String name, String quality, int jersey) {
+        
+        member[jersey] = new Players(name + i, "All_rounder", jersey);
+        if(i<jersey)
+        {
+            i=jersey;
+        }
 
-        member[jersey] = new Players(name + i, "All_rounder", i);
+       
 
     }
 
@@ -103,10 +109,16 @@ class features {
 
     void totaplayer() {
         for (int index = 0; index <= i; index++) {
+            
+            if(member[index]== null){
+                
+            }
 
-            System.out.println(member[index].name);
-            System.out.println(member[index].quality);
-            System.out.println(member[index].jersey);
+            else{
+                System.out.println(member[index].name);
+                System.out.println(member[index].quality);
+                System.out.println(member[index].jersey);
+            }
         }
     }
 
@@ -152,21 +164,58 @@ class features {
 
 public class CricketDatabase {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
         features ff = new features();
 
         ff.addplayer();
-        ff.newplayer("mehedi", "Batsman", 50);
 
-         ff.totaplayer();
-
+        
         for(int i = 1; i <= 7; i++){
             for(int j = 1; j <= 7; j++){
                 ff.addmatch(i, j);
             }
         }
 
-        ff.matchplayer(4);
+        System.out.println("Enter Choice Number : ");
+
+        System.out.println("1. Add New Player");
+        System.out.println("2. Match Players");
+        System.out.println("3. Total Players");
+        System.out.println("4. Exit");
+
+        int choice = sc.nextInt();
+        
+        if(choice == 1){
+            System.out.println("Enter Player Name : ");
+            String name = sc.next();
+            System.out.println("Enter Player Quality : ");
+            String quality = sc.next();
+            System.out.println("Enter Player Jersey Number : ");
+            int jersey = sc.nextInt();
+            ff.newplayer(name, quality, jersey);
+
+            System.out.println("If you want to see the player list:\n 1.Yes \n 2.No");
+            int ch = sc.nextInt();
+            if(ch == 1){
+                ff.totaplayer();
+            }
+
+        }
+
+        else if(choice == 2){
+            System.out.println("Enter Match Number : ");
+            int n = sc.nextInt();
+            ff.matchplayer(n);
+        }
+
+        else if(choice == 3){
+            ff.totaplayer();
+        }
+
+        else if(choice == 4){
+            System.exit(0);
+        }
+        sc.close();
 
     }
 }
