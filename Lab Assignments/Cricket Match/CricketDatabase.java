@@ -1,3 +1,21 @@
+// In this problem, we will deal with a cricket team. A team member can be identified
+// with the following pieces of information: name (string data), quality (batsman,
+// bowler, all_rounder), and jersey number (integer).
+// a) We should have a class that would address associated members to solve this
+// problem (Mark 10).
+// b) We should have a function that adds a new player to the team with his
+// associated information (Mark 20).
+// c) We are going to construct teams for 7 days denoting, 7 team formations. We
+// should have a method that would take the day number (1st day, 2nd day, …)
+// and the player’s jersey number to include him/her in a particular day’s
+// formation. (Mark 30).
+// d) Finally, we should have another method that would take a parameter denoting
+// the day number on which we are going to print the information. In the printing,
+// we would expect to see all the players of that particular day’s formation: their
+// names, jersey numbers, and attributes. We would also expect statistics
+// denoting the total number of batsmen, bowlers, and all_rounders in that
+// particular day’s formation in a summarized manner (Mark 40).
+
 
 import java.util.Scanner;
 class Players {
