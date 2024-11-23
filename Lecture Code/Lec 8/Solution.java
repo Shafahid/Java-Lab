@@ -8,6 +8,10 @@
 // static function in interface + access, can not modifiy static attributes anywhere (by normal definition of interface attributes)
 // static & private attributes are inherent to an interface, can not access it from outside. 
 //  -- this is different from static access within a normal class based inheritance
+// Static Methods:
+// They belong to the interface itself, not to an instance of a class implementing the interface.
+// They cannot be overridden by implementing classes.
+
 import java.util.Scanner;
 
 interface Outer{ // public / Default 
