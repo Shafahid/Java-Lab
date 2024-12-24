@@ -13,8 +13,8 @@ public class B{
         p1.Parent temp = new p1.Parent();
         temp.mA(); // public 
 
-        //temp.mB(); // default
-        //temp.mC(); // protected
+      //  temp.mB(); // default
+      //  temp.mC(); // protected
         C c = new C();
         c.newmc();
     }
