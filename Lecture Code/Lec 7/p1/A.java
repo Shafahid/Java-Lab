@@ -29,6 +29,12 @@ abstract class Fuzzy implements InnerA, InnerB {
 }
 
 class FuzzyImp extends Fuzzy{
+    public void fA() {
+        System.out.println("Implemented fA method() in FuzzyImp");
+    }
+    public void fB() {
+        System.out.println("Implemented fB method() in FuzzyImp");
+    }
     void fuzzy(){
         System.out.println("Implemented Fuzzy");
     }
